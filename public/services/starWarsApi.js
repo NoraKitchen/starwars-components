@@ -12,7 +12,6 @@
 			var deferred = $q.defer();
 			
 			$http.get(urlBase + 'people?page='+ pageNum).then(function (resp) {
-                debugger
 				if (resp.status === 200) {
 					deferred.resolve(resp.data);
 				}

@@ -10,7 +10,7 @@
 		require: {
         	people: '^starWarsPeople'
     	},
-		templateUrl: 'templates/person.html',
+		templateUrl: 'public/templates/person.html',
 		controller: starWarsPersonController
 	});
 

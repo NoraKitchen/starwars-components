@@ -4,7 +4,7 @@
 	angular.module('myStarWars')
 
 	.component('starWarsPeople', {
-		templateUrl: 'templates/people.html',
+		templateUrl: 'public/templates/people.html',
 		controller: starWarsPeopleController
 	});
 
@@ -22,8 +22,11 @@
 		
 		function activate() {
 			
-            vm.getData = function(direction){
+            vm.getData = function(direction){				
                 vm.currentPage += direction
+				if (vm.currentPage < 1){
+					vm.currentPage = 1;
+				}
                 starWarsApi.getPeople(vm.currentPage).then(function(data){
                     vm.people = data.results;
                     vm.next = data.next;
